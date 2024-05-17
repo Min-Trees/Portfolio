@@ -126,16 +126,17 @@ section{
     max-width: 44rem;
 }
 
-.home-content h3{
-    font-size: 3.2rem;
+.home-content h4{
+    font-size: 2.2rem;
     font-weight: 700;
     line-height: .3;
 }
 
- .home-content h2{
-    font-size: 4.6rem;
+ .home-content h3{
+    font-size: 3.6rem;
     font-weight: 700;
     margin-bottom: .3rem;
+    margin-top: 1rem;
 }
 .home-content p{
     font-size: 1.6rem;
@@ -201,6 +202,7 @@ section{
     justify-content: center;
     align-items: center;
 }
+
 
 .home .profession-box .profession{
     position: absolute;
@@ -268,7 +270,7 @@ span{
     gap: 4rem;
 }
 .about img{
-    width: 35vw;
+    width: 65vw;
 }
 .heading{
     font-size: 4.5rem;
