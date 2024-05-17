@@ -609,6 +609,18 @@ span{
         height: 670px;
         z-index: -1;
     }
+    .resume {
+        padding: 7rem 3% 2rem;
+    }
+
+    .resume-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-img {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 365px) {
