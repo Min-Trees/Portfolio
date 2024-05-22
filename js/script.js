@@ -23,3 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
         header.classList.toggle('sticky', top > 100);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.querySelector('.animated-text');
+    const text = textElement.textContent;
+    textElement.innerHTML = '';
+
+    text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.setProperty('--delay', `${index * 0.1}s`);
+        textElement.appendChild(span);
+    });
+});

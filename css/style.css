@@ -10,7 +10,7 @@
 }
 
 :root{
-    --bg-color: #fdfdfd;
+    --bg-color: rgba(0, 0, 0);
     --text-color: #333;
     --main-color: #754ef9;
     --white-color: #fdfdfd;
@@ -130,14 +130,36 @@ section{
     font-size: 2.2rem;
     font-weight: 700;
     line-height: .3;
+    color:var(--white-color);
 }
 
- .home-content h3{
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-content h3 {
     font-size: 3.6rem;
     font-weight: 700;
     margin-bottom: .3rem;
     margin-top: 1rem;
+    display: inline-block;
 }
+
+.home-content h3 span {
+    display: inline-block;
+    opacity: 0; /* Initial state of opacity for the animation */
+    animation: fadeIn 0.5s ease-in-out forwards; /* Applying the animation */
+    animation-delay: var(--delay); /* Custom property to set individual delay */
+    margin-right: 0.2rem; /* Adjust this value to set the desired spacing */
+}
+
 .home-content p{
     font-size: 1.6rem;
     margin: 2rem 0;
@@ -259,6 +281,10 @@ section{
     pointer-events: none;
 }
 
+.resume .heading{
+    color:var(--white-color)
+}
+
 span{
     color: var(--main-color);
 }
@@ -279,6 +305,7 @@ span{
 .about-content h2{
     text-align: left;
     line-height: 1.2;
+    color: var(--white-color);
 }
 
 .about-content h3{
@@ -287,6 +314,7 @@ span{
 .about-content p{
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
+    color:var(--white-color)
 }
 
 .service .services-container{
@@ -330,7 +358,12 @@ span{
     padding-bottom: 7rem;
 }
 .service h2{
-    margin-bottom: 5rem;
+    margin-bottom: 5rem;    
+    color: var(--white-color);
+}
+
+.services .heading {
+    color: var(--white-color);
 }
 
 .services-container .services-box:hover{
@@ -338,43 +371,52 @@ span{
     transform: scale(1.03);
 }
 
-.contact h2{
-    margin-bottom: 3rem;
-}
-.contact form{
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
+
+
+.contact {
+    background-color: var(--bg-color); /* Light background color */
+    padding: 50px 20px; /* Padding around the section */
+    text-align: center; /* Center align text */
 }
 
-.contact form .input-box{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.contact .heading {
+    font-size: 2.5rem; /* Larger font size for heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color:var(--white-color); /* Darker color for contrast */
 }
 
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color:var(--text-color);
-    background: var(--bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
-    box-shadow: 0 .1rem .5rem var(--shadow-color);
+.contact .heading span {
+    color: #007BFF; /* Highlight color for span */
 }
 
-.contact form .input-box input{
-    width: 49%;
+.contact form {
+    max-width: 800px; /* Max width for form */
+    margin: 0 auto; /* Center align form */
 }
-.contact form textarea{
-    resize: none;
+
+.contact .input-box {
+    background: var(--bg-color); /* White background for input boxes */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px 0; /* Space between input boxes */
+    padding: 20px; /* Padding inside input boxes */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    border: 1px solid transparent; /* Transparent border for spacing */
+    border-color: var(--main-color);
 }
-.contact form .btn{
-    margin-top: 2rem;
-    cursor: pointer;
+
+.contact .input-box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.contact .input-box span h2 {
+    font-size: 2.2rem; /* Adjusted font size for content */
+    color: var(--main-color); /* Medium color for text */
+}
+
+.contact .input-box span h2:first-of-type {
+    font-weight: bold; /* Bold first part (label) */
+    margin-bottom: 5px; /* Space below the label */
 }
 
 .resume {
